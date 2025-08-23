@@ -1,0 +1,142 @@
+/* Reset básico */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* --------- Pantalla de inicio --------- */
+.overlay {
+    background: url('fondo.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    text-align: center;
+    background-color: rgba(0,0,0,0.6);
+    padding: 50px;
+    border-radius: 25px;
+    color: white;
+    z-index: 2;
+}
+
+.logo {
+    width: 250px;
+    margin-bottom: 20px;
+    animation: logoBounce 2s infinite;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    animation: fadeIn 2s;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+    animation: fadeIn 3s;
+    color: #ffcc00;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 22px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #ff3b3b;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.1);
+}
+
+/* Animaciones */
+@keyframes logoBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --------- Página de información --------- */
+.menu {
+    background-color: #222;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.menu button {
+    background-color: #ff3b3b;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.menu button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.05);
+}
+
+.info-container {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #2575fc, #6a11cb);
+    color: white;
+    min-height: 100vh;
+}
+
+.info-container h1, .info-container h2 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.info-container p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.staff-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.staff-member {
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 20px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.staff-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #ff3b3b;
+}
+
+.staff-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
