@@ -5,24 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cádiz RP™ | Español - Bienvenida</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Fondo con la imagen */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url("https://cdn.discordapp.com/attachments/1379089972346355832/1417577893399105686/image-77.png?ex=68cafdcb&is=68c9ac4b&hm=6b4e72a01f9afdb98b1ec707c5e531195308287616d389f497d42c33c5247ec7&") 
+        no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: brightness(0.7); /* oscurece un poco para que resalte el texto */
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    .logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    #enterBtn {
+      padding: 12px 24px;
+      font-size: 1rem;
+      background: #ffcc00;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #enterBtn:hover {
+      background: #ffaa00;
+    }
+
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
   <div class="overlay">
     <div class="content">
-      <!-- Logo del servidor -->
       <img src="logo.png" alt="Logo Cádiz RP" class="logo">
-
-      <!-- Título principal -->
       <h1>Bienvenido a <span class="highlight">Cádiz RP™</span> | Español</h1>
-      
-      <!-- Subtítulo -->
       <p class="subtitle">¡Únete a la mejor experiencia de roleplay!</p>
-      
-      <!-- Botón principal -->
       <button id="enterBtn">Entrar al servidor</button>
     </div>
-
-    <!-- Fondo con partículas -->
     <div class="particles"></div>
   </div>
 
