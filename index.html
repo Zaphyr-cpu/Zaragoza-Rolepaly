@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -14,7 +14,7 @@
 
     /* Fondo con la imagen rp2 */
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background: url("rp2.png") no-repeat center center fixed;
       background-size: cover;
       color: white;
@@ -25,53 +25,65 @@
       overflow: hidden;
     }
 
-    /* Oscurecer fondo para mejor lectura */
+    /* Oscurecer fondo */
     .overlay {
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
     }
 
+    /* Contenido */
     .content {
       text-align: center;
       position: relative;
       z-index: 2;
+      animation: fadeIn 2s ease-in-out;
     }
 
     .logo {
-      width: 200px;
+      width: 220px;
       margin-bottom: 20px;
+      animation: floatLogo 4s ease-in-out infinite;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 10px;
+      animation: textGlow 2s ease-in-out infinite alternate;
     }
 
     .subtitle {
       font-size: 1.2rem;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       color: #ffcc00;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
     }
 
     #enterBtn {
-      padding: 12px 24px;
-      font-size: 1rem;
-      background: #ff3333;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      background: linear-gradient(90deg, #ff3333, #cc0000);
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       transition: 0.3s;
       color: white;
       font-weight: bold;
+      animation: pulse 2s infinite;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
     }
 
     #enterBtn:hover {
-      background: #cc0000;
+      background: linear-gradient(90deg, #ff5555, #aa0000);
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
     }
 
     /* Partículas animadas */
@@ -83,27 +95,47 @@
       height: 100%;
       z-index: 1;
       overflow: hidden;
+      pointer-events: none;
     }
 
     .particle {
       position: absolute;
-      width: 5px;
-      height: 5px;
       background: white;
       border-radius: 50%;
-      opacity: 0.7;
-      animation: float 10s linear infinite;
+      opacity: 0.8;
+      animation: float linear infinite;
     }
 
+    /* Animaciones */
     @keyframes float {
       from {
         transform: translateY(100vh) scale(0.5);
         opacity: 1;
       }
       to {
-        transform: translateY(-10vh) scale(1.2);
+        transform: translateY(-10vh) scale(1.3);
         opacity: 0;
       }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.07); }
+    }
+
+    @keyframes textGlow {
+      from { text-shadow: 0 0 10px #ff3333, 0 0 20px #ff0000; }
+      to { text-shadow: 0 0 20px #ff6666, 0 0 40px #ff0000; }
     }
   </style>
 </head>
@@ -112,7 +144,7 @@
     <div class="content">
       <img src="logo.png" alt="Logo Cádiz RP" class="logo">
       <h1>Bienvenido a <span class="highlight">Cádiz RP™</span> | Español</h1>
-      <p class="subtitle">¡Bienvenidos a Cadiz Rp™ | Español! Un servidor de rol estricto y profesional donde aprenderás y te divertirás. Recuerda que si tienes alguna duda informa a algún miembro de la administración para que te ayuden. ¡Diviértete! </p>
+      <p class="subtitle">¡Bienvenidos a Cádiz Rp™ | Español! Un servidor de rol estricto y profesional donde aprenderás y te divertirás. Recuerda que si tienes alguna duda informa a algún miembro de la administración para que te ayuden. ¡Diviértete!</p>
       <button id="enterBtn">Entrar al servidor</button>
     </div>
     <div class="particles" id="particles"></div>
@@ -129,14 +161,14 @@
       // Posición aleatoria
       particle.style.left = Math.random() * window.innerWidth + "px";
 
-      // Duración aleatoria
-      const duration = Math.random() * 10 + 5;
-      particle.style.animationDuration = duration + "s";
-
       // Tamaño aleatorio
-      const size = Math.random() * 4 + 2;
+      const size = Math.random() * 6 + 2;
       particle.style.width = size + "px";
       particle.style.height = size + "px";
+
+      // Duración aleatoria
+      const duration = Math.random() * 8 + 5;
+      particle.style.animationDuration = duration + "s";
 
       particlesContainer.appendChild(particle);
 
@@ -147,9 +179,7 @@
     }
 
     // Generar partículas continuamente
-    setInterval(createParticle, 300);
+    setInterval(createParticle, 250);
   </script>
 </body>
 </html>
-
-
