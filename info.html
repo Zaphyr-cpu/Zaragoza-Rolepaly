@@ -1,42 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadiz Rp™ | Español - Información</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadiz Rp™ | Español - Información</title>
+  <style>
+    /* Fondo degradado */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: linear-gradient(180deg, #1e90ff, #6a0dad);
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* Botón menú */
+    .menu {
+      padding: 15px;
+      background: rgba(0,0,0,0.3);
+      text-align: left;
+    }
+    .menu button {
+      background: #ffffff10;
+      color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .menu button:hover {
+      background: white;
+      color: black;
+    }
+
+    /* Contenedor principal */
+    .info-container {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* Grid staff */
+    .staff-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Animación de aparición */
+    .staff-member {
+      background: rgba(0,0,0,0.4);
+      border-radius: 20px;
+      padding: 20px;
+      width: 230px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: aparecer 1s forwards;
+    }
+    .staff-member:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .staff-member:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+    @keyframes aparecer {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hover */
+    .staff-member:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    }
+
+    /* Imagen staff */
+    .staff-member img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 15px;
+      border: 3px solid white;
+      padding: 5px;
+      background: rgba(255,255,255,0.1);
+      transition: transform 0.3s;
+    }
+    .staff-member:hover img {
+      transform: rotate(-2deg) scale(1.1);
+    }
+
+    /* Nombres y cargos */
+    .staff-member h3 {
+      margin: 15px 0 5px 0;
+      font-size: 20px;
+    }
+    .staff-member p {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
-    <nav class="menu">
-        <button onclick="irInicio()">Página de inicio</button>
-    </nav>
+  <nav class="menu">
+    <button onclick="irInicio()">Página de inicio</button>
+  </nav>
 
-    <div class="info-container">
-        <h1>Sobre Cadiz Rp™ | Español</h1>
-        <p>Servidor de roleplay ambientado en Cadiz. Vive historias, conduce vehículos, trabaja o delinque, ¡tú eliges tu rol!</p>
+  <div class="info-container">
+    <h1>Sobre Cadiz Rp™ | Español</h1>
+    <p>Servidor de roleplay ambientado en Cadiz. Vive historias, conduce vehículos, trabaja o delinque, ¡tú eliges tu rol!</p>
 
-        <h2>Equipo Administrativo</h2>
-        <div class="staff-grid">
-            <!-- Dueño 1 -->
-            <div class="staff-member">
-                <img src="dueño.png" alt="David">
-                <h3>David</h3>
-                <p>Dueño</p>
-            </div>
+    <h2>Equipo Alta Direcciono</h2>
+    <div class="staff-grid">
+      <!-- Dueño 1 -->
+      <div class="staff-member">
+        <img src="dueño.png" alt="David">
+        <h3>David</h3>
+        <p>Dueño</p>
+      </div>
 
-            <!-- Dueño 2 -->
-            <div class="staff-member">
-                <img src="dueño2.png" alt="Maximo">
-                <h3>Maximo</h3>
-                <p>Co-Dueño</p>
-            </div>
-        </div>
+      <!-- Dueño 2 -->
+      <div class="staff-member">
+        <img src="dueño2.png" alt="Maximo">
+        <h3>Maximo</h3>
+        <p>Co-Dueño</p>
+      </div>
     </div>
+  </div>
 
-    <script>
-        function irInicio() {
-            window.location.href = "index.html";
-        }
-    </script>
+  <script>
+    function irInicio() {
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
 </html>
