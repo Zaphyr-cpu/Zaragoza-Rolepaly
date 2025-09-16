@@ -6,13 +6,12 @@
   <title>Cádiz RP™ | Español - Bienvenida</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Fondo con la imagen */
+    /* Fondo con la imagen rp2 */
     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: url("https://cdn.discordapp.com/attachments/1379089972346355832/1417577893399105686/image-77.png?ex=68cafdcb&is=68c9ac4b&hm=6b4e72a01f9afdb98b1ec707c5e531195308287616d389f497d42c33c5247ec7&") 
-        no-repeat center center fixed;
+      background: url("rp2.png") no-repeat center center fixed;
       background-size: cover;
       color: white;
     }
@@ -23,7 +22,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      backdrop-filter: brightness(0.7); /* oscurece un poco para que resalte el texto */
+      background: rgba(0, 0, 0, 0.5); /* oscurece un poco la imagen para que se lea bien el texto */
     }
 
     .content {
@@ -43,20 +42,22 @@
     .subtitle {
       font-size: 1.2rem;
       margin-bottom: 20px;
+      color: #ffcc00;
     }
 
     #enterBtn {
       padding: 12px 24px;
       font-size: 1rem;
-      background: #ffcc00;
+      background: #ff3333;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
+      color: white;
     }
 
     #enterBtn:hover {
-      background: #ffaa00;
+      background: #cc0000;
     }
 
     .particles {
